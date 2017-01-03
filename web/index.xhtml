@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <!-- estilos ccs y bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <link href="js/bootstrap.min.js" rel="stylesheet"/>
+
+        <script src="js/jquery.min.js" rel="stylesheet"/>
+
+        <link href="js/jquery-latest.js" rel="stylesheet"/>
+        <link href="css/estilos.css" rel="stylesheet" />
+
+        <title>Proyecto</title>
+
+
+    </h:head>
+    <h:body>
+
+        <header>
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"  data-toggle="collapse" data-target="#navegacion-od">
+                            <span class="sr-only"> Desplegar / Ocultar Menú</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.xhtml" class="navbar-brand">DCW</a>
+                    </div>
+                    <!-- menu -->
+                    <div class="collapse navbar-collapse" id="navegacion-od">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Inicio</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                    Consultas <span class="caret"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Consulta 1</a></li>
+                                    <li><a href="#">Consulta 2</a></li>
+                                    <li><a href="#">Consulta 3</a></li>
+                                    <li><a href="#">Consulta 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Tratamientos</a></li>
+                        </ul>
+
+
+                        <!-- modal de inicio de sesion -->
+                        <form  class="navbar-form navbar-right" role="login">
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" 
+                                    data-target="#myModal">
+                                <span class="glyphicon glyphicon-log-in"></span>
+                            </button>
+
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">X</button>
+                                            <h4 class="modal-title">Inicio de Sesión</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h:panelGrid columns="3" >
+                                            <h:outputLabel value="Usuario: "/>
+                                            <p:inputText value="#{clinicaBean.doctor.nick}"/>
+                                            <h:outputLabel value="Password: "/>
+                                            <p:inputText value="#{clinicaBean.doctor.pass}"/>
+                                            </h:panelGrid>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>    
+            </nav>
+        </header>
+
+        <section class="jumbotron jumbotron-header">
+            <div class="container">
+                <h1>Web Dental</h1>
+                <p>Cuida tú boca</p>
+            </div>
+        </section>
+
+
+
+
+        <section class="main container">
+            <div class="row">
+                <section class="posts col-md-9" >
+                    <!--<div class="miga-pan">
+                        <ol class="breadcrumb">
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Inicio 1</a></li>
+                            <li><a href="#">Inicio 2</a></li>
+                        </ol>
+                    </div>-->
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental7.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿Por qué es importante tener unos dientes sanos?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            Si te cuidas los dientes, ayudarás a prevenir la formación de la placa 
+                            dental, que es una capa muy fina que se pega a los dientes. Tal vez no te preocupe
+                            demasiado el hecho de tener placa dental, pero el problema es
+                            que es muy pegajosa y actúa como un imán para las bacterias y el azúcar.
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/odontologia-infantil.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿Cómo puedes tener unos dientes sanos?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            Lávatelos por lo menos dos veces al día después de desayunar y antes de acostarte por la noche. Si puedes, lávatelos también después de la comida y después de tomar un tentempié dulce. Lavarse bien los dientes ayuda a descomponer la placa dental.
+
+                            Cepíllate todos los dientes, no solamente los que están delante y se ven más. Dedica un tiempo a los dientes laterales y a la cara interna de todos ellos. No te cepilles las encías.
+
+                            Dedica tiempo a lavarte los dientes, por lo menos tres minutos cada vez. Si te cuesta calcular el tiempo, utiliza un cronómetro o ponte una canción que te guste para ayudar a pasar el tiempo.
+
+                            Pregunte a su dentista si un enjuague bucal antibacteriano de boca tiene razón para ti.
+
+                            Asegúrate de que tu cepillo de dientes es de cerdas suaves (en el envoltorio pondrá si es suave, medio o duro). Pide a tus padres que te cambien el cepillo de dientes cada tres meses. Las cerdas de algunos cepillos cambian de color cuando toca cambiar de cepillo.
+
+                            Aprende a utilizar seda dental, lo que es muy importante para mantener los dientes sanos. Las primeras veces que utilices seda dental tal vez te resulte extraño, pero en poco tiempo te harás un experto en su uso. Desliza la seda dental entre cada par de dientes adyacentes y a lo largo de la línea de las encías. La seda dental permite eliminar los restos de alimentos ocultos y llegar adonde no puede llegar el cepillo de dientes por muy bien que uno se lave los dientes.
+
+                            ¡También puede cepillar la lengua para ayudar a mantener el aliento fresco!
+
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental2.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿A que edad debo lleva a mi hijo al primer control dental?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            En cuanto a la primera visita al odontólogo, la Academia Americana de Odontología Pediátrica solía aconsejar que fuera alrededor de los 3 años, sin embargo, teniendo en cuenta que muchos niños ya tienen caries cuando comienzan su etapa escolar, el consejo ha cambiado para hacer esta visita seis meses después de la aparición de los primeros dientes y a más tardar antes de los doce meses de vida.
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental3.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿A que edad salen los primeros dientes temporales (De Leche)?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            La erupción de los primeros dientes suele comenzar a los 6 meses aproximadamente con los incisivos centrales inferiores. A los 8 meses erupcionan los incisivos centrales superiores, seguidos de los incisivos laterales inferiores, luego los superiores y luego erupcionan simultáneamente los caninos superiores e inferiores, luego el primer molar temporal y por último alrededor del 24 meses los segundos molares temporales. Recuerde que los dientes de leche son tan importantes como los definitivos y es posible conservarlos sanos.
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental1.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿Cuándo debo empezar a lavarle los dientes a mi hijo?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            La higiene dental del bebé se debe comenzar cuanto antes y no esperar a que salgan los primeros dientes, la leche artificial que se le da al bebé tiene alto contenido en azúcares, así que una manera correcta de proceder sería cogiendo una gasa con los dedos y pasarla suavemente por la encía del bebé donde posteriormente saldrán los dientes.A medida que el número de dientes aumenta se debe usar un cepillo de dientes pequeño y suave. El cepillado debe ser asistido por un adulto. Se aconseja tener un cepillo en el jardín y otro en la casa. Desde los 4 años, si controla deglución el niño(a) ya puede usar pasta dental infantil en pequeña cantidad (tamaño de una lenteja). Recuerde: La responsabilidad de la dentadura de los niños es esencialmente de los padres.
+
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental4.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿Cuándo empiezan a salir los dientes permanentes?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            A los 6 años (algunos niños antes, otros después), se inicia el recambio dentario con los incisivos centrales inferiores, el cual es detectado sin problemas por los familiares, a diferencia del 1º molar permanente o molar de los 6 años, que aparece detrás de los molares temporales, sin que haya otro diente que se cambie, esta es la razón por la que generalmente pasa desapercibida su aparición en boca y muchos padres piensan que es un diente temporal. Este molar de los 6 años es importante sellarlo cuando aparezca en boca para protegerlo de las caries y es el responsable de cerrar los espacios que generalmente existen entre los molares temporales, con lo que se dificulta la limpieza entre estos dientes, facilitando la formación de caries.
+
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental5.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿Cómo afecta la alimentación del niño a la hora de prevenir caries?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            Fundamental valorar la ingesta de alimentos azucarados y siempre teniendo en cuenta que los más retentivos son los más cariogénicos (un caramelo ‘toffee’ o blando es más cariogénico que una bebida azucarada). Promover colaciones no cariogénicas durante jornadas en jardines infantiles y colegios. Acostumbrar al niño a la fruta natural, agua potable sin agregados y, en lo posible, consumir leche con poca azúcar.Si tiene que acostar a su niño con la mamadera o el chupete, llénelo solamente con agua. Chupar por mucho tiempo la mamadera o un chupete que contenga o esté mojado con otros líquidos puede dañar los dientes de su hijo (a). El deterioro dental (las caries) causado por el uso de la mamadera y del chupete, es uno de los problemas mas frecuentes en los niños de menos de tres años de edad.
+
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>
+
+
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="images/dental6.jpg" alt="Foto niño"></img>
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">¿A cada cuánto tiempo debo llevar a mi hijo al dentista?</a>
+                        </h2>
+                        <p><span class="post-fecha">27 de Noviembre 2016</span> por <span class="post-autor"><a href="#">Dc. Medina</a></span></p>
+                        <p class="post-contenido text-justify">
+                            <br/><br/><br/>
+                            Algunos niños pueden tener mayores probabilidades de padecer caries, por ejemplo aquellos que acostumbran dormir con objetos en la boca o quienes permanecen gran parte del día usando un vaso u otro tipo de recipiente para beber líquidos. En estos casos las visitas preventivas al odontólogo se harán cada 6 meses. En los casos de menor riesgo, el pediatra será el encargado de recomendar la frecuencia.Otro factor de riesgo que se debe tener en cuenta es la herencia. Si los familiares del niño o de la niña han tenido episodios recurrentes con padecimientos dentales, se aconseja visitar cada 6 meses al especialista para que, en caso de ocurrir, detecte tempranamente problemas de este tipo.
+
+                        </p>
+                        <!--
+                                                <div class="contenedor-botones">
+                                                    <a href="#" class="btn btn-primary">Leer más</a>
+                                                    <a href="#" class="btn btn-success">Comentarios <span class="badge">20</span></a>
+                                                </div>-->
+                    </article>                    
+                    <!--
+                                        <nav>
+                                            <div class="center-block">
+                                                <ul class="pagination">
+                                                    <li class="disabled"><a href="#">&laquo; <span class="sr-only"> Anterior</span></a></li>
+                                                    <li class="active"> <a href="#"> 1</a></li>
+                                                    <li> <a href="#"> 1</a></li>
+                                                    <li> <a href="#"> 2</a></li>
+                                                    <li> <a href="#"> 3</a></li>
+                                                    <li> <a href="#"> 4</a></li>
+                                                    <li> <a href="#">&rsaquo;<span class="sr-only">Siguiente</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                    -->
+                </section>
+                <!--
+                                <aside class="col-md-3 hidden-xs hidden-sm">
+                                    <h4>Aqui hacer lo de api twitter</h4>-->
+                <!-- hacer la lista o elcuadro de twitter -->
+                <!--<div></div>
+
+                <h4>Aqui hacer lo de api mm pensando</h4>
+
+
+
+            </aside> -->
+            </div>
+        </section>
+
+
+
+        <!--<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>CAutor de blog</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <ul class="list-inline text-right">
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#"> pagina de el</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>-->
+
+
+
+        <script src="js/jquery-latest.js"/>
+        <script src="js/bootstrap.min.js"/>
+    </h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<p:layout fullPage="true">
+                <p:layoutUnit position="west" header="Menú">
+                    <p:commandButton value="Inicio de sesión" ajax="false" action="index.xhtml"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center" header="Doctor´s Muelita">
+
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="South unit content." />
+                </p:layoutUnit>
+            </p:layout>
+
+-->

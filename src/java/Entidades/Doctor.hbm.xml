@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/01/2017 14:10:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Doctor" table="doctor" schema="public" optimistic-lock="version">
+        <id name="iddoctor" type="int">
+            <column name="iddoctor" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="Entidades.Usuario" fetch="select">
+            <column name="iduser" />
+        </many-to-one>
+        <property name="usuario_1" type="string">
+            <column name="usuario" />
+        </property>
+        <property name="pass" type="string">
+            <column name="pass" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <set name="historialclinicos" table="historialclinico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="iddoctor" />
+            </key>
+            <one-to-many class="Entidades.Historialclinico" />
+        </set>
+    </class>
+</hibernate-mapping>

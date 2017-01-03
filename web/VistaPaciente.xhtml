@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="css/estilopaciente.css"/>
+        <script type="text/javascript" src="js/cambiarPestanna.js"></script>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+        <title>Registro paciente</title>
+
+    </h:head>
+    <h:body style="display: flex; min-height: 100vh;" styleClass="hs1">
+
+
+
+
+        <h:form id="form">
+            <div class="container center-block col-md-6">
+                <p:growl id="msgs" showDetail="true" />
+
+                <h3 style="margin-top:0">Datos del Paciente</h3>
+                <p:tabView>
+                    <p:tab title="Información">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <h:outputText value="Nombre: " />
+                            <h:outputText value="#{clinicaBean.usuario.nombre}" />
+                            <h:outputText value="Apellido: " />
+                            <h:outputText value="#{clinicaBean.usuario.apellido}" />
+                            <h:outputText value="Dirección: " />
+                            <h:outputText value="#{clinicaBean.usuario.direccion}" />
+                            <h:outputText value="Cédula: " />
+                            <h:outputText value="#{clinicaBean.usuario.cedula}" />
+                            <h:outputText value="Fecha Nacimiento: " />
+                            <h:outputText value="#{clinicaBean.usuario.fechnac}" />
+                            <h:outputText value="Edad: " />
+                            <h:outputText value="#{clinicaBean.usuario.edad}" />
+                            <h:outputText value="Género: " />
+                            <h:outputText value="#{clinicaBean.usuario.genero}" />
+                        </h:panelGrid>
+
+                    
+                    </p:tab>
+                    <p:tab title="Historial">
+                        <h:panelGrid columns="1" cellpadding="10">
+                            <p:dataTable value="#{clinicaBean.paciente.historialclinicosPaciente}" var="p">
+                                <p:column headerText="Fecha Consulta">
+                                    <h:outputLabel value="#{p.fechhist}"/>
+                                </p:column>
+
+                                <p:column headerText="Consulta Anterior">
+                                    <h:outputLabel value="#{p.fechanthist}"/>
+                                </p:column>
+
+                                <p:column headerText="Próxima Consulta">
+                                    <h:outputLabel value="#{p.fechproxhist}"/>
+                                </p:column>
+
+                                <p:column headerText="Observación">
+                                    <h:outputLabel value="#{p.observacion}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Citas">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                            <h:outputText value="pensando q mismo vamos a hacer" />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:tabView>
+            </div>
+        </h:form>
+
+
+
+    </h:body>
+</html>
+

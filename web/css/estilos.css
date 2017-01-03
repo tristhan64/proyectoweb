@@ -1,0 +1,80 @@
+/* 
+    Created on : 26/11/2016, 18:35:48
+    Author     : Jona
+*/
+.navbar{
+    margin-bottom: 0;
+}
+.jumbotron-header{
+    background: #428BCA;
+    color: #fff;
+    padding: 20px 0;
+}
+.main{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.post {
+    padding-bottom: 20px ;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #999;
+}
+.post .post-title a{
+    color: #333;
+}
+.post .thumb{
+    margin-right: 10px;
+    width: 40%;
+}
+.post .thumb img{
+    width: 100%;
+}
+
+.post .contenedor-botones{
+    width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .post .thumb{
+        width: 100%;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+.hs1{
+    background-image: url(../images/foto.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-attachment: fixed;
+}
+.hs{
+    background-image: url(../images/foto-login.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-attachment: fixed;
+    display: flex; min-height: 100vh;
+    
+}
+.login-user{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    
+}
+.no-border {
+    border-style: hidden !important ;
+    background-color: #ccc;
+}
+
+.frm{
+    background: #428BCA;
+    color: #fff;
+    font-size: 23px;
+     
+}

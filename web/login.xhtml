@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <title>Login</title>
+
+    </h:head>
+    <h:body styleClass="hs">
+        
+        <div class="col-md-4 col-md-2 col-xs-2 center-block  hijo">
+            <h:form >
+                <p:panelGrid columns="2" class="login-user" columnClasses="no-border, no-border" >
+                        <h:outputLabel value="Usuario:"/>
+                        <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
+                                     required="true" />
+
+                        <h:outputLabel value="Password:"/>
+                        <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
+                                     required="true"/>
+                        <br/>
+                        <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
+                        <f:setPropertyActionListener value="#{l}" target="#{clinicaBean.doctor}"/>
+                        </p:commandButton>
+                        <a href="#" >Registrarse</a>
+                    </p:panelGrid>                
+
+            </h:form>    
+        </div>
+            
+            
+    </h:body>
+</html>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/01/2017 14:10:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="idusuario" type="int">
+            <column name="idusuario" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" />
+        </property>
+        <property name="cedula" type="java.lang.Integer">
+            <column name="cedula" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" />
+        </property>
+        <property name="fechnac" type="date">
+            <column name="fechnac" length="13" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+        <property name="genero" type="string">
+            <column name="genero" />
+        </property>
+        <set name="pacientes" table="paciente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="iduser" />
+            </key>
+            <one-to-many class="Entidades.Paciente" />
+        </set>
+        <set name="doctors" table="doctor" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="iduser" />
+            </key>
+            <one-to-many class="Entidades.Doctor" />
+        </set>
+    </class>
+</hibernate-mapping>

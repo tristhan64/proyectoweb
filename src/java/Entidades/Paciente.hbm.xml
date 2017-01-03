@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/01/2017 14:10:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Paciente" table="paciente" schema="public" optimistic-lock="version">
+        <id name="idpaciente" type="int">
+            <column name="idpaciente" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="Entidades.Usuario" fetch="select">
+            <column name="iduser" />
+        </many-to-one>
+        <property name="motivoconsulta" type="string">
+            <column name="motivoconsulta" />
+        </property>
+        <set name="historialclinicos" table="historialclinico" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpaciente" />
+            </key>
+            <one-to-many class="Entidades.Historialclinico" />
+        </set>
+    </class>
+</hibernate-mapping>
