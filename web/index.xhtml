@@ -11,7 +11,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" />
 
         <link href="css/estilos.css" rel="stylesheet" />
-        
+
         <title>Proyecto</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -51,41 +51,45 @@
                     </div>
                 </div>    
             </nav>            
-             <!-- modal de inicio de sesion -->
-                        <form  class="navbar-form navbar-right" role="login">
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" 
-                                    data-target="#myModal">
-                                <span class="glyphicon glyphicon-log-in"></span>
-                            </button>
-                            <div id="myModal" class="modal fade" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="exampleModalLabel">Inicio de Sesión</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group">
-                                                    <h:panelGrid columns="3" >
-                                                        <h:outputLabel value="Usuario: "/>
-                                                        <p:inputText value="#{clinicaBean.doctor.nick}"/>
-                                                        <h:outputLabel value="Password: "/>
-                                                        <p:inputText value="#{clinicaBean.doctor.pass}"/>
-                                                    </h:panelGrid>
-                                                    </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send message</button>
-                                        </div>
-                                    </div>
+            <!-- modal de inicio de sesion -->
+            <form  class="navbar-form navbar-right" role="login">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" 
+                        data-target="#myModal">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                </button>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel">Inicio de Sesión</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <h:form>
+                                    <h:panelGrid columns="1" >
+                                        <h:outputLabel value="Usuario: "/>
+                                        <p:inputText value="#{clinicaBean.doctor.nick}" placeholder="Username"/>
+                                        <h:outputLabel value="Password: "/>
+                                        <p:password value="#{clinicaBean.doctor.pass}" placeholder="Password"/>
+                                    </h:panelGrid>
+                                        </h:form>
                                 </div>
                             </div>
-                        </form>
-                        <!-- modal de fin inicio de sesion -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <p:commandButton value="Ingresar" 
+                                                 actionListener="#{clinicaBean.login()}" >
+                                    <f:setPropertyActionListener value="#{p}" 
+                                                                 target="#{clinicaBean.doctor}"/>
+                                </p:commandButton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- modal de fin inicio de sesion -->
         </header>
 
         <section class="jumbotron jumbotron-header">
@@ -332,7 +336,7 @@
         </footer>-->
 
 
-       
+
     </h:body>
 </html>
 

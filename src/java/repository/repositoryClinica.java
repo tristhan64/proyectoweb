@@ -13,7 +13,6 @@ import org.hibernate.Session;
 import org.primefaces.context.RequestContext;
 
 /**
- *
  * @author Jona
  */
 public class repositoryClinica {
