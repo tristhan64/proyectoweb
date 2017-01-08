@@ -8,32 +8,137 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <script src="js/"/>
+
         <title>Login</title>
+        <style>
+            .hs{
+                position: relative;
+            }
+            .contenedor-modal{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0,0,0,0.8);
+                -webkit-transition: 0.5s ease;
+                opacity: 0;
+                pointer-events: none;
+
+            }
+            .mostrar-modal{
+                opacity: 1;
+                pointer-events: all;
+            }
+            .cuerpo-modal{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: white;
+                font-size: 15px;
+                text-align: center;
+                font-family: fantasy;
+                padding: 10px;
+            }
+            .cerrar-modal{
+                cursor: pointer;
+                font-size: 25px;
+                top: 6%;
+                right: 10%;
+                position: absolute;
+                color: white;
+                font-family: cursive;
+            }
+            .boton-modal{
+                width: 25%;
+                background: cyan;
+                color: white;
+                text-align: center;
+                line-height: 40px;
+                font-size: 25px;
+                font-family: monospace;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                cursor: pointer;
+                border-radius: 30px;
+            }
+        </style>
+
 
     </h:head>
     <h:body styleClass="hs">
-        
+
         <div class="col-md-4 col-md-2 col-xs-2 center-block  hijo">
             <h:form >
                 <p:panelGrid columns="2" class="login-user" columnClasses="no-border, no-border" >
-                        <h:outputLabel value="Usuario:"/>
-                        <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
-                                     required="true" />
+                    <h:outputLabel value="Usuario:"/>
+                    <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
+                                 required="true" />
 
-                        <h:outputLabel value="Password:"/>
-                        <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
-                                     required="true"/>
-                        <br/>
-                        <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
+                    <h:outputLabel value="Password:"/>
+                    <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
+                                required="true"/>
+                    <br/>
+                    <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
                         <f:setPropertyActionListener value="#{l}" target="#{clinicaBean.doctor}"/>
-                        </p:commandButton>
-                        <a href="#" >Registrarse</a>
-                    </p:panelGrid>                
+                    </p:commandButton>
+                    <a href="#" >Registrarse</a>
+
+                    <h:outputLabel value="mostrar" styleClass="boton-modal"/>
+                </p:panelGrid>                
 
             </h:form>    
         </div>
-            
-            
+
+
+        <h:form>
+            <div class="contenedor-modal">
+                <div class="cerrar-modal">X</div>
+                <div class="cuerpo-modal">
+                    <h1> ventana modal prueba</h1>
+                    <h:form >
+                        <p:panelGrid columns="2" class="login-user" columnClasses="no-border, no-border" >
+                            <h:outputLabel value="Usuario:"/>
+                            <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
+                                         required="true" />
+
+                            <h:outputLabel value="Password:"/>
+                            <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
+                                        required="true"/>
+                            <br/>
+                            <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
+                                <f:setPropertyActionListener value="#{l}" target="#{clinicaBean.doctor}"/>
+                            </p:commandButton>
+                            <a href="#" >Registrarse</a>
+
+                            <h:outputLabel value="mostrar" styleClass="boton-modal"/>
+                        </p:panelGrid>                
+
+                    </h:form>   
+                </div>
+
+            </div>
+
+
+        </h:form>
+
+
+        <script>
+            $(document).ready(function () {
+                $("#myBtn").click(function () {
+                    $("#myModal").modal("show");
+                });
+                $("#myModal").on('show.bs.modal', function () {
+                    alert('The modal is about to be shown.');
+                });
+            });
+        </script>
+
+
     </h:body>
 </html>
 

@@ -9,13 +9,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
         <!-- estilos ccs y bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
-        <link href="js/bootstrap.min.js" rel="stylesheet"/>
 
-        <script src="js/jquery.min.js" rel="stylesheet"/>
-
-        <link href="js/jquery-latest.js" rel="stylesheet"/>
         <link href="css/estilos.css" rel="stylesheet" />
+        
+        
 
         <title>Proyecto</title>
 
@@ -61,25 +58,30 @@
                                 <span class="glyphicon glyphicon-log-in"></span>
                             </button>
 
-                            <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
+                            <div id="myModal" class="modal fade" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">X</button>
-                                            <h4 class="modal-title">Inicio de Sesión</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="exampleModalLabel">Inicio de Sesión</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <h:panelGrid columns="3" >
-                                            <h:outputLabel value="Usuario: "/>
-                                            <p:inputText value="#{clinicaBean.doctor.nick}"/>
-                                            <h:outputLabel value="Password: "/>
-                                            <p:inputText value="#{clinicaBean.doctor.pass}"/>
-                                            </h:panelGrid>
+                                            <form>
+                                                <div class="form-group">
+                                                    <h:panelGrid columns="3" >
+                                                        <h:outputLabel value="Usuario: "/>
+                                                        <p:inputText value="#{clinicaBean.doctor.nick}"/>
+                                                        <h:outputLabel value="Password: "/>
+                                                        <p:inputText value="#{clinicaBean.doctor.pass}"/>
+                                                    </h:panelGrid>
+                                                    </div>
+                                            </form>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
                                         </div>
                                     </div>
 
@@ -87,6 +89,7 @@
                             </div>
 
                         </form>
+                        <!-- modal de fin inicio de sesion -->
                     </div>
                 </div>    
             </nav>
@@ -337,8 +340,11 @@
 
 
 
-        <script src="js/jquery-latest.js"/>
+        <script src="https://code.jquery.com/jquery.js"/>
         <script src="js/bootstrap.min.js"/>
+
+
+       
     </h:body>
 </html>
 
