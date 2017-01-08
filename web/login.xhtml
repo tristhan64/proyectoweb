@@ -8,7 +8,12 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
-        <script src="js/"/>
+        <script src="/js/jquery.min.js"/>
+        <script src="/js/bootstrap.min.js"></script>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <title>Login</title>
         <style>
@@ -72,71 +77,42 @@
     </h:head>
     <h:body styleClass="hs">
 
-        <div class="col-md-4 col-md-2 col-xs-2 center-block  hijo">
-            <h:form >
-                <p:panelGrid columns="2" class="login-user" columnClasses="no-border, no-border" >
-                    <h:outputLabel value="Usuario:"/>
-                    <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
-                                 required="true" />
+       
+<div class="container">
+  <h2>Modal Events - show.bs.modal</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
 
-                    <h:outputLabel value="Password:"/>
-                    <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
-                                required="true"/>
-                    <br/>
-                    <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
-                        <f:setPropertyActionListener value="#{l}" target="#{clinicaBean.doctor}"/>
-                    </p:commandButton>
-                    <a href="#" >Registrarse</a>
-
-                    <h:outputLabel value="mostrar" styleClass="boton-modal"/>
-                </p:panelGrid>                
-
-            </h:form>    
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
         </div>
-
-
-        <h:form>
-            <div class="contenedor-modal">
-                <div class="cerrar-modal">X</div>
-                <div class="cuerpo-modal">
-                    <h1> ventana modal prueba</h1>
-                    <h:form >
-                        <p:panelGrid columns="2" class="login-user" columnClasses="no-border, no-border" >
-                            <h:outputLabel value="Usuario:"/>
-                            <p:inputText placeholder="Escriba su usuario" value="#{clinicaBean.doctor.nick}" 
-                                         required="true" />
-
-                            <h:outputLabel value="Password:"/>
-                            <p:password value="#{clinicaBean.doctor.pass}" placeholder="Escriba su password" 
-                                        required="true"/>
-                            <br/>
-                            <p:commandButton value="Ingresar" actionListener="#{clinicaBean.login()}" ajax="false">
-                                <f:setPropertyActionListener value="#{l}" target="#{clinicaBean.doctor}"/>
-                            </p:commandButton>
-                            <a href="#" >Registrarse</a>
-
-                            <h:outputLabel value="mostrar" styleClass="boton-modal"/>
-                        </p:panelGrid>                
-
-                    </h:form>   
-                </div>
-
-            </div>
-
-
-        </h:form>
-
-
-        <script>
-            $(document).ready(function () {
-                $("#myBtn").click(function () {
-                    $("#myModal").modal("show");
-                });
-                $("#myModal").on('show.bs.modal', function () {
-                    alert('The modal is about to be shown.');
-                });
-            });
-        </script>
+        <div class="modal-body">
+          <p>The <strong>show.bs.modal</strong> event occurs when the modal is about to be shown.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+ 
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal("show");
+    });
+        
+});
+</script>
 
 
     </h:body>
