@@ -7,19 +7,17 @@ package repository;
 
 import Entidades.Doctor;
 import java.util.List;
-import javax.faces.application.FacesMessage;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.primefaces.context.RequestContext;
 
 /**
  * @author Jona
  */
 public class repositoryClinica {
+
     // login 
-    public String login(Doctor doctor){
-       
-        
+    /*public String login(Doctor doctor){
        Session n= Util.NewHibernateUtil.getSessionFactory().getCurrentSession();
         n.beginTransaction();
         Query query= n.createQuery("select nick, pass from Doctor where nick=? and pass=?")
@@ -36,8 +34,35 @@ public class repositoryClinica {
         }else{
          return "Menu.xhtml";
         }
-    }
+    }*/
     //lista historialClini sl paciente
+
+    public boolean loginClinica(String username, String password) {
+        try {
+            Session n = Util.NewHibernateUtil.getSessionFactory().getCurrentSession();
+            n.beginTransaction();
+            Query query = n.createQuery("select nick, pass from Doctor where nick=? and pass=?")
+                    .setString(0, username)
+                    .setString(1, password);
+            List<Doctor> list = (List<Doctor>) query.list();
+            return list.size()>0;
+        } catch (HibernateException e) {
+            return false;
+        }
+    }
     
-    
+    public boolean loginUsuario(String username, String password) {
+        try {
+            Session n = Util.NewHibernateUtil.getSessionFactory().getCurrentSession();
+            n.beginTransaction();
+            Query query = n.createQuery("select nick, pass from Doctor where nick=? and pass=?")
+                    .setString(0, username)
+                    .setString(1, password);
+            List<Doctor> list = (List<Doctor>) query.list();
+            return list.size()>0;
+        } catch (HibernateException e) {
+            return false;
+        }
+    }
+
 }

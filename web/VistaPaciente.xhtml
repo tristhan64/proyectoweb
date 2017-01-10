@@ -12,18 +12,22 @@
         <title>Registro paciente</title>
 
     </h:head>
-    <h:body style="display: flex; min-height: 100vh;" styleClass="hs1">
-
-
-
+    <h:body style="display: inline-block; min-height: 100vh;" styleClass="hs1">
 
         <h:form id="form">
-            <div class="container center-block col-md-6">
+            
                 <p:growl id="msgs" showDetail="true" />
-
+                
+                <p:panelGrid columns="1">
                 <h3 style="margin-top:0">Datos del Paciente</h3>
-                <p:tabView>
-                    <p:tab title="Información">
+                <h3 style="margin-top:0">Cerrar Sesión</h3>
+                </p:panelGrid>
+                
+                
+                
+                
+                <p:tabView orientation="left" style="display: inline-block; width: 100%">
+                    <p:tab title="Información" >
                         <h:panelGrid columns="2" cellpadding="10">
                             <h:outputText value="Nombre: " />
                             <h:outputText value="#{clinicaBean.usuario.nombre}" />
@@ -66,12 +70,12 @@
                     </p:tab>
                     <p:tab title="Citas">
                         <h:panelGrid columns="2" cellpadding="10">
-                            <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                            <p:graphicImage name="images/foto.jpg" />
                             <h:outputText value="pensando q mismo vamos a hacer" />
                         </h:panelGrid>
                     </p:tab>
                 </p:tabView>
-            </div>
+
         </h:form>
 
 

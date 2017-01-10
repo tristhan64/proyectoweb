@@ -68,22 +68,19 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <h:form>
-                                    <h:panelGrid columns="1" >
-                                        <h:outputLabel value="Usuario: "/>
-                                        <p:inputText value="#{clinicaBean.doctor.nick}" placeholder="Username"/>
-                                        <h:outputLabel value="Password: "/>
-                                        <p:password value="#{clinicaBean.doctor.pass}" placeholder="Password"/>
-                                    </h:panelGrid>
-                                        </h:form>
+                                        <h:panelGrid columns="1" >
+                                            <h:outputLabel value="Usuario: "/>
+                                            <p:inputText value="#{loginBean.username}" placeholder="Username"/>
+                                            <h:outputLabel value="Password: "/>
+                                            <p:password value="#{loginBean.password}" placeholder="Password"/>
+                                        </h:panelGrid>
+                                    </h:form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <p:commandButton value="Ingresar" 
-                                                 actionListener="#{clinicaBean.login()}" >
-                                    <f:setPropertyActionListener value="#{p}" 
-                                                                 target="#{clinicaBean.doctor}"/>
-                                </p:commandButton>
+                                                 actionListener="#{loginBean.loginControl()}"/>
+                                <p:link value="Registrar" outcome="usuario"/>
                             </div>
                         </div>
                     </div>

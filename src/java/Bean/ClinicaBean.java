@@ -32,7 +32,7 @@ public class ClinicaBean implements Serializable {
     private repositoryClinica clinicaLogica;
 // login 
     public void login(){
-        clinicaLogica.login(doctor);
+        //clinicaLogica.login(doctor);
     }
     public ClinicaBean() {
         doctor=new Doctor();

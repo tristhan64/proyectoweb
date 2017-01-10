@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registro de Usuario</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="css/estilosPaciente.css" rel="stylesheet" />
+       
+        <h:outputScript library="js" name="SpanishLocale.js"/>
+        
+    </h:head>
+    <body class="hsPacienteRegistro">
+
+        <h:form>
+
+            <p:fieldset legend="Datos Personales">
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Nombres"/>
+                    <p:inputText/>
+
+                    <p:outputLabel value="Apellido"/>
+                    <p:inputText/>
+
+                    <p:outputLabel value="Cédula"/>
+                    <p:inputText/>
+
+                    <p:outputLabel value="Dirección"/>
+                    <p:inputText/>
+
+                    <p:outputLabel value="Fecha Nacimiento"/>
+                    <p:calendar locale="es"/>
+
+                    <p:outputLabel value="Edad"/>
+                    <p:inputText/>
+
+                    <p:outputLabel value="Sexo"/>
+                    <p:selectOneRadio >
+                        <f:selectItem itemValue="M" itemLabel="Masculino"/>
+                        <f:selectItem itemValue="F" itemLabel="Femenino"/>
+                    </p:selectOneRadio>
+                </h:panelGrid> 
+            </p:fieldset>
+                <br/>
+            <p:fieldset legend="Datos de la cuenta">
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Email"/>
+                    <p:inputText placeholder="-@example.com"/>
+
+                    <p:outputLabel value="Clave"/>
+                    <p:password/>
+                </h:panelGrid>
+            </p:fieldset>
+            
+            <p:commandButton icon="ui-icon-check" value="Registrar"/>
+        </h:form>
+
+        
+        
+         
+    </body>
+</html>

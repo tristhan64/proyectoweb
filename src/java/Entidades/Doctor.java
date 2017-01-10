@@ -35,8 +35,6 @@ public class Doctor  implements java.io.Serializable {
     public Doctor() {    
     }
 
-  
-
     public int getIddoctor() {
         return iddoctor;
     }
